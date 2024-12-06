@@ -1,0 +1,165 @@
+PS C:\> Get-ADUser -Filter * -properties AccountExpirationDate | Where-Object{$_.AccountExpirationDate -lt (Get-Date) -and $_.AccountExpirationDate 
+-ne $null -and $_.Enabled -eq $True} | select-object Name, SamAccountName, AccountExpirationDate
+Windows Persistance 
+Registry Keys: 
+HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
+HKU\<SID>\Software\Microsoft\Windows\CurrentVersion\Run
+HKU\<SID>\Software\Microsoft\Windows\CurrentVersion\RunOnce
+HKLM\SYSTEM\CurrentControlSet\services
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+PowershellProfiles:
+$Profile
+Test-Path -Path $profile.currentUsercurrentHost
+Test-Path -Path $profile.currentUserAllHosts
+Test-Path -Path $profile.AllUsersAllHosts
+Test-Path -Path $profile.AllUserscurrentHost
+All Users, All Hosts  $PsHome\Profile.ps1
+All Users, Current Host $PsHome\Microsoft.PowerShell_profile.ps1
+Current User, All Hosts $Home\[My]Documents\Profile.ps1
+Current User, Current Host $Home\[My ]Documents\WindowsPowerShell\Profile.ps1
+Schtasks:
+Schtasks /query
+In powershell
+Get-schdual task
+GUI Task schedual
+AutoRuns
+sysinterals (net use * https://sysinternals.com) -accepteula
+Logon explorer 
+Services
+sc query 
+registry
+GUI
+powershell
+Get-service Get-Ciminstance
+Repeting:Sequental=suspisious:6666,4444,7777,3333,1234,4321,9876
+games, antivirus, Entertainment,music,discord
+ARTIFACTS
+
+GET-L
+Get-History 
+C:\Users\username\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+PS C:\> Get-Content "C:\users\$env:username\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
+ Get-WinEvent Microsoft-Windows-PowerShell/Operational | Where-Object {$_.Message -ilike "*RunspacePool*"} | Format-List 
+Get-Winevent -FilterHashtable @{logname='Security';id='4624'} | ft -Wrap 
+Get-WinEvent -Listlog * | findstr /i "Security" 
+ Get-WinEvent -Listlog * 
+Get-Eventlog -LogName Security | ft -wrap 
+ Get-Eventlog -LogName Security | ft -wrap | findstr /i StR1nG 
+
+Linux 
+persistance 
+/etc/init
+rc.d
+/etc/profiles
+Crontab
+Services
+Permissions 
+r = Read,w = wrtie,x = exe U = USER/OWNER G = GROUP OO =OTHER
+Sysv
+/etc/init
+/etc/inittab
+/etc/rc.d
+systemd
+/usr/lib/systemd/system
+/lib/systemd/system
+top,htop
+ps -elf
+ service <servicename> status/start/stop/restart
+systemctl list-units
+systemctl list-units --all
+systemctl status <servicename.service>
+systemctl status <PID of service>
+systemctl start/stop/restart <servicename.service>
+Cron
+/var/spool/cron
+/etc/cron.d
+/etc/crontab
+crontab -l -u [user] This command will display/list user’s crontab contents
+crontab -u [user] file This command will load the crontab data from the specified file
+crontab -r -u [user] This Command will remove user’s crontab contents
+crontab -e -u [user] This command will edit user’s crontab contents
+gci -Path "C:\" -Recurse | where {$_.Name -like '*.txt'}
+https://os.cybbh.io/public/os/latest/014_windows_active_directory_enumeration/active_fg.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
